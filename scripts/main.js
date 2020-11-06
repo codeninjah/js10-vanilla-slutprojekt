@@ -17,7 +17,9 @@ let result = await getRandomBeer(randomNr) // Anropar getRandomBeer functionen o
 
 
 console.log(result) //JUST TO TEST
+document.querySelector(".beer-pic").innerHTML = "<img src='" + result[0].image_url + "'/>"
 document.querySelector(".output").innerText = result[0].name
+
 }
 
 
