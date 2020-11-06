@@ -7,17 +7,41 @@ a {
     font-weight: 900;
 }
 
+/*
 .output{
     height: 200%;
     color: black;
     font-weight: 900;
 }
+*/
 
 .banner {
     text-align: center;
 }
 
+
+.beer-card {
+    border: 1px solid black;
+}
+
+
 .banner > img {
     width: 60%;
     height: auto;
+}
+
+.beer-pic img {
+    /*border: 1px solid black;*/
+    height: 500px;
+    width: auto;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hidden {
+    border-style: none;
 }
