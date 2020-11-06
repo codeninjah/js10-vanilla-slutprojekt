@@ -47,5 +47,5 @@ a {
 }
 
 .hidden {
-    border-style: none;
+    display: none;
 }
