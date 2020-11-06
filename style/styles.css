@@ -2,6 +2,22 @@ body {
     background-color: gray;
 }
 
+a {
+    color: white;
+    font-weight: 900;
+}
+
 .output{
     height: 200%;
+    color: white;
+    font-weight: 900;
+}
+
+.banner {
+    text-align: center;
+}
+
+.banner > img {
+    width: 60%;
+    height: auto;
 }
