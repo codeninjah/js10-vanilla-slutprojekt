@@ -1,28 +1,33 @@
-body, html {
-    background: url(/assets/kk.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    margin: 0%;
-    
-  }
-  
- 
-
-
-
-
-
-
-
-header{
-    background-color: #380101;
+body,
+html {
+  background: url(/assets/3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  margin: 0%;
 }
 
-.nav{
-    display: flex;
-    justify-content: center;
+header {
+  background-color: #380101;
+  border-radius: 10px;
+
+  width: 600px;
+
+  align-self: center;
+
+  font-family: "Lobster", cursive;
+  font-size: 60px;
+  color: #ffd700;
+  box-shadow: 0px 1px 8px 1px #895706c4;
+
+  margin-bottom: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 a {
@@ -31,26 +36,48 @@ a {
   font-size: 40px;
   font-family: lobster;
   text-decoration: none;
-  
 }
 
 .banner {
   text-align: center;
+  border-radius: 10px;
 }
 
 .beer-card {
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   margin-top: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 0px #000;
 }
 
-.beer-name{
-    display: flex;
-    font-size: 30px;
-    justify-content: center;
-    font-family: 'Lobster';
-    color: #FFD700;
-    padding-top: 10px;
-  
+.beer-name {
+  display: flex;
+  font-size: 40px;
+  justify-content: center;
+  font-family: "Lobster";
+  text-decoration: underline;
+  margin: 20px;
+  color: rgb(0 0 0);
+  padding-top: 10px;
+}
+
+.beer-info {
+  display: flex;
+  justify-content: center;
+  background-color: #380101;
+  border-radius: 10px;
+  width: 200px;
+  align-self: center;
+  font-family: "Lobster", cursive;
+  font-size: 60px;
+  color: #ffd700;
+  box-shadow: 0px 1px 8px 1px #895706c4;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .banner > img {
@@ -59,22 +86,25 @@ a {
 }
 
 .pickabeer {
-    background-color: #55555540;
-    font-family: 'Lobster', cursive;
-    font-size: 60px; 
-    color: #FFD700;
+  background-color: #380101c7;
+  font-family: "Lobster", cursive;
+  font-size: 60px;
+  color: #ffd700;
+  box-shadow: 0px 1px 8px 1px #895706c4;
 }
 
 .beer-pic {
-  text-align: center;
-  background: radial-gradient(#913030, #380101);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .beer-pic img {
-  /*border: 1px solid black;*/
   height: 500px;
   width: auto;
   margin-top: 20px;
+
+  border-radius: 10px;
 }
 
 .wrapper {
@@ -90,10 +120,40 @@ a {
   display: none;
 }
 
-
 element.style {
-    background-color: #722020;
-    border-radius: 10px;
-    width: 108;
-    padding: 6;
+  background-color: #722020;
+  border-radius: 10px;
+  width: 108;
+  padding: 6;
+}
+
+main {
+  
+  box-shadow: 0px 0px 20px 3px #38010152;
+  border-radius: 20px;
+}
+
+.random-beer-btn {
+  background-color: #380101;
+  border-radius: 10px;
+  width: 600px;
+  align-self: center;
+  font-family: "Lobster", cursive;
+  font-size: 60px;
+  color: #ffd700;
+  box-shadow: 0px 1px 8px 1px #895706c4;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+#beer-info {
+  font-size: x-large;
+  font-family: lobster;
 }
