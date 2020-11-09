@@ -23,13 +23,15 @@ const binfo = document.querySelector("#beer-info")
 binfo.innerHTML = "<p>" + result[0].description + "</p>"
 binfo.innerHTML += "<p>Alcohol by volume: " + result[0].abv + "</p>"
 binfo.innerHTML += "<p>Volume: " + result[0].volume.value + " " + result[0].volume.unit
-//binfo.innerHTML += //Ingredients
+binfo.innerHTML += "<p> Ingredients: " + Object.keys( result[0].ingredients) + "</p>"
 //binfo.innerHTML += //Hops
 //binfo.innerHTML += //Food pairing
 binfo.innerHTML += "<p>Brewer tips: " + result[0].brewers_tips + "</p>"
 
 binfo.classList.add("hidden")
 }
+
+
 //---------------------END FUNKTIONEN PRINT -------------------//
 
 
