@@ -1,65 +1,52 @@
-console.log("It works!");
-
-///----------------Testar att implementera search---------------//
+console.log("It works!")
 
 //-------------------- FETCHING API ---------------//
 async function getRandomBeer(rndNr) {
-  let req = await fetch("https://api.punkapi.com/v2/beers/" + rndNr);
-  let res = await req.json();
+<<<<<<< HEAD
+  const req = await fetch("https://api.punkapi.com/v2/beers/" + rndNr);
+  const res = await req.json();
   return res;
 }
+=======
+    const req = await fetch ("https://api.punkapi.com/v2/beers/" + rndNr) 
+    const res = await req.json()
+    return res
+};
+>>>>>>> parent of fbfaaaf... senaste
 
 //--------------------PRINT FUNCTIONEN -------------//
-
 async function print() {
-  let randomNr = Math.floor(Math.random() * 100); // returns a random integer from 0 to 99
+let randomNr = Math.floor(Math.random() * 100);     // returns a random integer from 0 to 99 
 
-  let result = await getRandomBeer(randomNr); // Anropar getRandomBeer functionen och skickar med ett randomNr som parameter
+let result = await getRandomBeer(randomNr) // Anropar getRandomBeer functionen och skickar med ett randomNr som parameter
 
-  console.log(result); //JUST TO TEST
+console.log(result) //JUST TO TEST
 
-  document.querySelector(".beer-pic").innerHTML =
-    "<img src='" + result[0].image_url + "'/>";
-  document.querySelector(".beer-name").innerText = result[0].name;
+document.querySelector(".beer-pic").innerHTML = "<img src='" + result[0].image_url + "'/>"
+document.querySelector(".beer-name").innerText = result[0].name
 
-  const binfo = document.querySelector("#beer-info");
+const binfo = document.querySelector("#beer-info")
 
-  binfo.innerHTML = "<p>" + result[0].description + "</p>";
-  binfo.innerHTML += "<p>Alcohol by volume: " + result[0].abv + "</p>";
-  binfo.innerHTML +=
-    "<p>Volume: " + result[0].volume.value + " " + result[0].volume.unit;
-  binfo.innerHTML +=
-    "<p> Ingredients: " + Object.keys(result[0].ingredients) + "</p>";
-  binfo.innerHTML +=
-    "<p>Hops: " +
-    Object.getOwnPropertyDescriptor(result[0].ingredients.hops[0].name[0]) +
-    "</p>";
-  //binfo.innerHTML += //Food pairing
-  binfo.innerHTML += "<p>Brewer tips: " + result[0].brewers_tips + "</p>";
+binfo.innerHTML = "<p>" + result[0].description + "</p>"
+binfo.innerHTML += "<p>Alcohol by volume: " + result[0].abv + "</p>"
+binfo.innerHTML += "<p>Volume: " + result[0].volume.value + " " + result[0].volume.unit
+binfo.innerHTML += "<p> Ingredients: " + Object.keys( result[0].ingredients) + "</p>"
+//binfo.innerHTML += //Hops
+//binfo.innerHTML += //Food pairing
+binfo.innerHTML += "<p>Brewer tips: " + result[0].brewers_tips + "</p>"
 
-  binfo.classList.add("hidden");
-
-  //test
-
-  //---------------------END FUNKTIONEN PRINT -------------------//
-
-  // VILL DU LADDA IN EN RANDOM BEER, ANVÄND BORTKOMMENTERADE FUNKTIONSANROPET NEDAN
-  //print()
-
-  const randomiseBtn = document.querySelector(".random-beer-btn");
-  randomiseBtn.addEventListener("click", function () {
-    print();
-  });
-
-  //------------------ EXEMPEL PÅ HUR DESCRIPTION SKULLE KUNNA FUNKA ----------//
-  const bInfo = document.querySelector(".info");
-  const bInfoText = document.querySelector("#beer-info");
-
-  bInfo.addEventListener("click", function () {
-    bInfoText.classList.remove("hidden");
-  });
+binfo.classList.add("hidden")
 }
 
+
+//---------------------END FUNKTIONEN PRINT -------------------//
+
+
+<<<<<<< HEAD
+
+
+
+print()
 
 
 
@@ -67,7 +54,7 @@ async function print() {
 
 
 
-const loadBeers = async () => {
+/* const loadBeers = async () => {
    
   let url = 'https://api.punkapi.com/v2/beers/';
 
@@ -108,10 +95,10 @@ searchBar.addEventListener('keyup', (e) => {
     displayBeers(filteredBeers);
 });
 
-const displayBeers = (res) => {
+const displayBeers = (beers) => {
 
-    const htmlString = res
-        .map((beer) => {
+    const htmlString = beers
+        .map((beers) => {
             return `
             <li class="beer">
                 <h2>${beer.result.name}</h2>
@@ -124,10 +111,25 @@ const displayBeers = (res) => {
     beerList.innerHTML = htmlString;
 };
 
-loadBeers();
+loadBeers(); */
 
+=======
+// VILL DU LADDA IN EN RANDOM BEER, ANVÄND BORTKOMMENTERADE FUNKTIONSANROPET NEDAN
+//print()
 
+const randomiseBtn = document.querySelector(".random-beer-btn")
+randomiseBtn.addEventListener("click", function(){
+    print()
+});
 
+>>>>>>> parent of fbfaaaf... senaste
 
+//------------------ EXEMPEL PÅ HUR DESCRIPTION SKULLE KUNNA FUNKA ----------//
+const bInfo = document.querySelector(".info")
+const bInfoText = document.querySelector("#beer-info")
+
+bInfo.addEventListener("click", function(){
+    bInfoText.classList.remove("hidden")
+});
 
 
