@@ -1,63 +1,52 @@
 <html>
-  <head>
-    <title>Beer</title>
-    <link rel="stylesheet" href="style/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&family=Space+Grotesk:wght@300&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <head>
+        <title>Beer</title>
+        <link rel="stylesheet" href="style/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    </head>
 
-  <body>
-    
+    <body>
+        <div class="banner"> 
+            <p class="pickabeer">PickABeer.Com</p>
 
-    <div class="banner">
-      <p class="pickabeer">PickABeer.Com</p>
-    </div>
-    <div class="wrapper">
-      <header>
-        
-      </header>
-
-      <main>
-        <div class="beer-card">
-          <div class="beer-pic">
-            <img src="assets/beerorig.jpg" />
-          </div>
-
-          <div class="beer-name"></div>
-
-          <div class="beer-info">
-            <a href="#beer-info" class="info">See more</a>
-          </div>
         </div>
+            <div class="wrapper">
+            <header>
+               
+                <div class="nav">
+                    <a href="#search">Search</a>
+                </div>
+            </header>
 
-        <div class="btn">
-          <p>
-            <button class="random-beer-btn">Randomise</button>
-          </p>
-        </div>
-      </main>
+            <main>
+                <div class="beer-card">
+                    <div class="beer-pic">
+                        <img src="assets/beerorig.jpg">
+                    </div>
 
-      <section id="beer-info"></section>
-      <div class="container">
-        <h1>Search for a beer</h1>
-        <div id="searchWrapper">
-            <input
-                type="text"
-                name="searchBar"
-                id="searchBar"
-                placeholder="search for a beer"
-            />
-        </div>
-        <ul id="beerList">
-            <li>
-                
-            </li>
-        </ul>
-    </div>
+                    <div class="beer-name">
+
+                    </div>
+
+                    <div class="beer-info">
+                        <a href="#beer-info" class="info">See more</a>
+                    </div>
+                </div>
+
+                <div class="btn">
+                    <p>
+                        <button class="random-beer-btn">Randomise</button>
+                    </p>
+
+                </div>
+            </main>
+
+           
+            <section id="beer-info">
+            </section>
     </div>
 
-    <script src="scripts/main.js"></script>
-  </body>
+
+        <script src="scripts/main.js"></script>
+    </body>
 </html>
