@@ -9,7 +9,7 @@ async function getRandomBeer(rndNr) {
 
 //--------------------PRINT FUNCTIONEN -------------//
 async function print() {
-let randomNr = Math.floor(Math.random() * 100);     // returns a random integer from 0 to 99 
+let randomNr = Math.floor(Math.random() * 1000);     // returns a random integer from 0 to 999
 
 let result = await getRandomBeer(randomNr) // Anropar getRandomBeer functionen och skickar med ett randomNr som parameter
 
@@ -38,6 +38,7 @@ binfo.classList.add("hidden")
 // VILL DU LADDA IN EN RANDOM BEER, ANVÄND BORTKOMMENTERADE FUNKTIONSANROPET NEDAN
 //print()
 
+
 const randomiseBtn = document.querySelector(".random-beer-btn")
 randomiseBtn.addEventListener("click", function(){
     print()
@@ -45,6 +46,7 @@ randomiseBtn.addEventListener("click", function(){
 
 
 //------------------ EXEMPEL PÅ HUR DESCRIPTION SKULLE KUNNA FUNKA ----------//
+
 const bInfo = document.querySelector(".info")
 const bInfoText = document.querySelector("#beer-info")
 
