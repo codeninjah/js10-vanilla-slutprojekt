@@ -47,8 +47,8 @@ let createList = async function (userInput) {
     //makes the list clickable
      for (let i = 0; i < list.length; i++) {
          list[i].addEventListener("click", function () {
-             print(fetchBySearch(list[i].innerHTML));
-             seeMore();
+             print(fetchBySearch(list[i].innerHTML)); //print funktionen måste få förändringar
+             seeMore(); //beroende på print, vi kanske inte behöver skapa en seeMore() function
          })
      }
 }
