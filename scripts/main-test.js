@@ -74,6 +74,7 @@ var list = "";
 
 let fetchBySearch = async function (userInput) { 
     let root = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=10"; // + "&per_page=10";
+
     console.log("Is root below viewable?")
     console.log(root)
 
@@ -94,7 +95,6 @@ let createList = async function (userInput) {
 
 
     if(userInput.length > 0) {
-        //document.querySelector(".form2-container").classList.remove("search-hidden")
         for (let i = 0; i < fetchResult.length; i++) {
             let li = document.createElement("li");
             ul.appendChild(li)
@@ -105,7 +105,6 @@ let createList = async function (userInput) {
             list[i].innerHTML = fetchResult[i].name;   
             //console.log("Namn för id är : " + fetchResult[i].name) 
             
-
             //FÖR ATT FÅ FRAM ID FÖR ÖLEN
             id = fetchResult[i].id
             console.log("Och id är : " + fetchResult[i].id) //VI FÅR FRAM ID PÅ ÖLEN
