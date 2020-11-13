@@ -39,23 +39,17 @@ let createList = async function (userInput) {
         }
     }
 
-    /*
-    if (userInput.length == 0) {
-        document.querySelector(".form2-container").classList.add("search-hidden")
-    }
-    */
-
       
-    //makes the list clickable
+//makes the list clickable
      for (let i = 0; i < list.length; i++) {
          list[i].addEventListener("click", function () {
              print(fetchBySearch(list[i].innerHTML)); //print funktionen måste få förändringar
              seeMore(); //beroende på print, vi kanske inte behöver skapa en seeMore() function
-         })
+        })
      }
 }
 
-
+//hides list
 let hideList = function() {
     if(searchInput.value.length == 0) {
         

@@ -159,12 +159,12 @@ main {
 }
 
 
+/* ------------------------------------------------------- SECTION SEARCH PAGE --------------------------------------------------*/
+
 /* CSS KOD FÖR SEARCH-SIDAN */
 input[type=text] {
   width: 250px;
 }
-
-/* ------------------------------------------------------- SECTION SEARCH PAGE --------------------------------------------------*/
 
 .form-container{
   justify-content: center;
@@ -193,7 +193,6 @@ ul {
   height:40px;
   background-color: rgba(0, 0, 0, 0.803);
   color: #048980;
-  /* margin-right:2.2vh; */
 }
 
 
