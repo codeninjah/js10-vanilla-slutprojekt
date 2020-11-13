@@ -85,7 +85,7 @@ var list = "";
 
 
 let fetchBySearch = async function (userInput) { 
-    let beer = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=10"; // + "&per_page=10";
+    let beer = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=5"; // + "&per_page=10";
 
     console.log("Is root below viewable?")
     console.log(beer)
@@ -98,7 +98,7 @@ let fetchBySearch = async function (userInput) {
 
 
 let createList = async function (userInput) {
-    let id;
+    //let id;
     let fetchResult = await fetchBySearch(userInput);
 
     let searchMain = document.querySelector(".form-container");
@@ -126,6 +126,8 @@ let createList = async function (userInput) {
             li.addEventListener("click", function(){
                 printBeer(fetchResult[i].id)
             })
+
+ 
         }
 
     }
@@ -133,21 +135,6 @@ let createList = async function (userInput) {
 }
 
 console.log(list)
-
-
-//clicks
-//V1
-/*
-for (let i = 0; i < list.length; i++) {
-        list[i].addEventListener("click", function () {
-            printBeer(list[i].id); //printBeer funktionen måste få förändringar
-        })
-    }
-    
-}
-*/
-
-//V2
 
 
 //removes
