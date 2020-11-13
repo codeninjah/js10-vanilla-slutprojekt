@@ -54,8 +54,8 @@ async function printBeer(id) {
     let result = await getRandomBeer(id) // Anropar getRandomBeer functionen och skickar med ett randomNr som parameter
     
     //testing
-    console.log("Do I get this right? " + id) //output is [OBJECT OBJECT] 25 times
-    console.log("Resultat är: " + result) //JUST TO TEST
+    console.log("Do I get this right? " + id) //output does not contain id
+    console.log("Resultat är: " + result) //output is [OBJECT OBJECT] 25 times
     
     document.querySelector(".beer-pic").innerHTML = "<img src='" + result[0].image_url + "'/>"
     document.querySelector(".beer-name").innerText = result[0].name
@@ -121,6 +121,8 @@ let createList = async function (userInput) {
             //FÖR ATT FÅ FRAM ID FÖR ÖLEN
             id = fetchResult[i].id
             console.log("Och id är : " + fetchResult[i].id) //id is right
+
+            //return id
         }
     }
 
@@ -141,7 +143,6 @@ let hideList = function() {
         }
     }
 }
-
 
 searchInput.addEventListener("keyup", function () {
     createList(searchInput.value);
