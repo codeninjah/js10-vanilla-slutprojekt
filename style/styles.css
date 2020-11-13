@@ -166,20 +166,6 @@ input[type=text] {
   width: 250px;
 }
 
-.form-container{
-  justify-content: center;
-  margin-left: 20px;
-}
-
-.form2-container p{
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.803);
-  color: #048980;
-  width: 500px;
-  margin-left: 20px;  
-}
-
-
 ul {
   list-style-type:none;
 }
