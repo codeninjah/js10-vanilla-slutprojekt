@@ -8,7 +8,6 @@ console.log("It works!")
 //------------------------------------------------------------------------------------------------//
 
 //let beerId;
-let id;
 
 //-------------------- FETCHING API ---------------//
 async function getRandomBeer(rndNr) {
@@ -99,6 +98,7 @@ let fetchBySearch = async function (userInput) {
 
 
 let createList = async function (userInput) {
+    let id;
     let fetchResult = await fetchBySearch(userInput);
 
     let searchMain = document.querySelector(".form-container");
@@ -108,32 +108,47 @@ let createList = async function (userInput) {
 
 
     if(userInput.length > 0) {
+        ul.innerHTML = ""
         for (let i = 0; i < fetchResult.length; i++) {
             let li = document.createElement("li");
             ul.appendChild(li)
-
-            list = document.querySelectorAll(".ul-form li");
-            list[i].classList.add("li-form");
+            
+            li.classList.add("li-form");
     
-            list[i].innerHTML = fetchResult[i].name;   
+            li.innerHTML = fetchResult[i].name;   
             //console.log("Namn för id är : " + fetchResult[i].name) 
             
             //FÖR ATT FÅ FRAM ID FÖR ÖLEN
-            id = fetchResult[i].id
-            console.log("Och id är : " + fetchResult[i].id) //id is right
+            //id = fetchResult[i].id
 
-            //return id
+            console.log("Och id är : " + fetchResult[i].id) //id is right
+        
+            li.addEventListener("click", function(){
+                printBeer(fetchResult[i].id)
+            })
         }
+
     }
+
+}
+
+console.log(list)
 
 
 //clicks
+//V1
+/*
 for (let i = 0; i < list.length; i++) {
         list[i].addEventListener("click", function () {
             printBeer(list[i].id); //printBeer funktionen måste få förändringar
         })
     }
+    
 }
+*/
+
+//V2
+
 
 //removes
 let hideList = function() {
