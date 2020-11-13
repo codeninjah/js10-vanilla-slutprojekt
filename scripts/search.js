@@ -6,11 +6,11 @@ var list = "";
 
 
 let fetchBySearch = async function (userInput) { 
-    let root = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=1"; // + "&per_page=10";
+    let beer = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=1"; // + "&per_page=10";
     console.log("Is root below viewable?")
-    console.log(root)
+    console.log(beer)
 
-    let request = await fetch(root)
+    let request = await fetch(beer)
     let result = await request.json();
 
     return result;
