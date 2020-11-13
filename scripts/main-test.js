@@ -85,7 +85,7 @@ var list = "";
 
 
 let fetchBySearch = async function (userInput) { 
-    let beer = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=5"; // + "&per_page=10";
+    let beer = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=10"; // + "&per_page=10";
 
     console.log("Is root below viewable?")
     console.log(beer)
