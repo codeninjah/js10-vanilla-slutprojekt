@@ -1,12 +1,12 @@
 /* ----------------------------------------------- SEARCH PAGE ----------------------------------------- */
-/* Använde inspiration från https://renzosantamaria.github.io/Beerpedia/ ------------------------------- */
+/* -----------------------------------------------             ----------------------------------------- */
 
 var searchInput = document.querySelector(".search-text"); //FRÅN SÖK TEXTRUTAN
 var list = "";
 
 
 let fetchBySearch = async function (userInput) { 
-    let root = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=8"; // + "&per_page=10";
+    let root = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=1"; // + "&per_page=10";
     console.log("Is root below viewable?")
     console.log(root)
 
@@ -39,9 +39,11 @@ let createList = async function (userInput) {
         }
     }
 
+    /*
     if (userInput.length == 0) {
         document.querySelector(".form2-container").classList.add("search-hidden")
     }
+    */
 
       
     //makes the list clickable
