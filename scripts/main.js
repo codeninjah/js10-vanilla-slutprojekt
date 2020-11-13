@@ -9,7 +9,7 @@ async function getRandomBeer(rndNr) {
 
 //--------------------PRINT FUNCTIONEN -------------//
 async function print() {
-let randomNr = Math.floor(Math.random() * 1000);     // returns a random integer from 0 to 999
+let randomNr = Math.floor(Math.random() * 100);     // returns a random integer from 0 to 999
 
 let result = await getRandomBeer(randomNr) // Anropar getRandomBeer functionen och skickar med ett randomNr som parameter
 
