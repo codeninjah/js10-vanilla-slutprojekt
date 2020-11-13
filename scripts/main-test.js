@@ -127,7 +127,7 @@ let createList = async function (userInput) {
     }
 
 
-//makes the list clickable
+//clicks
 for (let i = 0; i < list.length; i++) {
         list[i].addEventListener("click", function () {
             printBeer(list[i].id); //printBeer funktionen måste få förändringar
@@ -135,7 +135,7 @@ for (let i = 0; i < list.length; i++) {
     }
 }
 
-//removes the list
+//removes
 let hideList = function() {
     if(searchInput.value.length == 0) {       
         for(let i = 0; i < list.length; i++) {
