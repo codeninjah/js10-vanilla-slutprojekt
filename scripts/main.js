@@ -53,5 +53,3 @@ const bInfoText = document.querySelector("#beer-info")
 bInfo.addEventListener("click", function(){
     bInfoText.classList.remove("hidden")
 });
-
-
