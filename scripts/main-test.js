@@ -1,5 +1,8 @@
 console.log("It works!")
 
+//let beerId;
+let id;
+
 //-------------------- FETCHING API ---------------//
 async function getRandomBeer(rndNr) {
     const req = await fetch ("https://api.punkapi.com/v2/beers/" + rndNr) 
@@ -36,19 +39,22 @@ binfo.classList.add("hidden")
 
 
 //-------------------- DEN FÖRÄNDRADE PRINT FUNCTIONEN -------------//
-//let beerId;
-let id;
 
 //more changes needed
-async function printBeer(beerId) {
+async function printBeer(id) {
     //let randomNr = Math.floor(Math.random() * 1000);     // returns a random integer from 0 to 999
     
-    let result = await getRandomBeer(beerId) // Anropar getRandomBeer functionen och skickar med ett randomNr som parameter
+    let result = await getRandomBeer(id) // Anropar getRandomBeer functionen och skickar med ett randomNr som parameter
     
+    //testing
+    console.log("Do I get this right? " + id) //output is [OBJECT OBJECT] 25 times
     console.log("Resultat är: " + result) //JUST TO TEST
     
     document.querySelector(".beer-pic").innerHTML = "<img src='" + result[0].image_url + "'/>"
     document.querySelector(".beer-name").innerText = result[0].name
+
+    //another test
+    console.log("DO I GET THE NAME OF THE BEER? " + result[0].name)
     
     const binfo = document.querySelector("#beer-info")
     
@@ -112,23 +118,23 @@ let createList = async function (userInput) {
     }
 
 
-    //makes the list clickable
-    for (let i = 0; i < list.length; i++) {
-         list[i].addEventListener("click", function () {
-             printBeer(list[i].id); //print funktionen måste få förändringar
-         })
+//makes the list clickable
+for (let i = 0; i < list.length; i++) {
+        list[i].addEventListener("click", function () {
+            printBeer(list[i].id); //print funktionen måste få förändringar
+        })
     }
 }
 
 //removes the list
 let hideList = function() {
-    if(searchInput.value.length == 0) {
-        
+    if(searchInput.value.length == 0) {       
         for(let i = 0; i < list.length; i++) {
             list[i].remove();
         }
     }
 }
+
 
 searchInput.addEventListener("keyup", function () {
     createList(searchInput.value);
