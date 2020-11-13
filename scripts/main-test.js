@@ -128,7 +128,7 @@ let createList = async function (userInput) {
 //makes the list clickable
 for (let i = 0; i < list.length; i++) {
         list[i].addEventListener("click", function () {
-            printBeer(list[i].id); //print funktionen måste få förändringar
+            printBeer(list[i].id); //printBeer funktionen måste få förändringar
         })
     }
 }
