@@ -40,16 +40,16 @@ let createList = async function (userInput) {
     }
 
       
-//makes the list clickable
+//clickable
      for (let i = 0; i < list.length; i++) {
          list[i].addEventListener("click", function () {
-             print(fetchBySearch(list[i].innerHTML)); //print funktionen måste få förändringar
-             seeMore(); //beroende på print, vi kanske inte behöver skapa en seeMore() function
+             print(fetchBySearch(list[i].innerHTML)); 
+             seeMore(); 
         })
      }
 }
 
-//hides list
+//hides
 let hideList = function() {
     if(searchInput.value.length == 0) {
         
