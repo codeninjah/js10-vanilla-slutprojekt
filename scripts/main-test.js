@@ -39,6 +39,7 @@ binfo.classList.add("hidden")
 //let beerId;
 let id;
 
+//more changes needed
 async function printBeer(beerId) {
     //let randomNr = Math.floor(Math.random() * 1000);     // returns a random integer from 0 to 999
     
