@@ -10,8 +10,8 @@ console.log("It works!")
 //let beerId;
 
 //-------------------- FETCHING API ---------------//
-async function getRandomBeer(rndNr) {
-    const req = await fetch ("https://api.punkapi.com/v2/beers/" + rndNr) 
+async function getBeer(beerNr) {
+    const req = await fetch ("https://api.punkapi.com/v2/beers/" + beerNr) 
     const res = await req.json()
     return res
 };
@@ -20,7 +20,7 @@ async function getRandomBeer(rndNr) {
 async function print() {
 let randomNr = Math.floor(Math.random() * 1000);     // returns a random integer from 0 to 999
 
-let result = await getRandomBeer(randomNr) // Anropar getRandomBeer functionen och skickar med ett randomNr som parameter
+let result = await getBeer(randomNr) // Anropar getBeer functionen och skickar med ett randomNr som parameter
 
 console.log(result) //JUST TO TEST
 
@@ -50,7 +50,7 @@ binfo.classList.add("hidden")
 async function printBeer(id) {
     //let randomNr = Math.floor(Math.random() * 1000);     // returns a random integer from 0 to 999
     
-    let result = await getRandomBeer(id) // Anropar getRandomBeer functionen och skickar med ett randomNr som parameter
+    let result = await getBeer(id) // Anropar getBeer functionen och skickar med ett randomNr som parameter
     
     //testing
     console.log("Do I get this right? " + id) //output does not contain id
@@ -192,9 +192,13 @@ let createList = async function (userInput, pageCounter) {
 console.log(list)
 */
 
+
+
+//---------------- TESTING REMOVING LIST -----------------//
 //removes
 
 //V1
+/*
 let hideList = function() {
     if(searchInput.value.length == 0) {       
         //ul.innerHTML = ""
@@ -203,16 +207,19 @@ let hideList = function() {
         }
     }
 }
+*/
 
 
 //V2
-/*
+
 let hideList = function() {
     if(searchInput.value.length == 0){
-        for()
+        for(var let of list){
+            let.remove()
+        }
     }
 }
-*/
+
 
 
 searchInput.addEventListener("keyup", function () {
