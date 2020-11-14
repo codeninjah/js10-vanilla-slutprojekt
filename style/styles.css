@@ -193,3 +193,18 @@ ul {
 .form-div {
   text-align: center;
 }
+
+/*FOR PAGINATION USE PURPOSES */
+.pagination-buttons{
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.803);
+  padding: 6px 0;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+.pagination-buttons p{
+  width: 40px;
+ 
+}

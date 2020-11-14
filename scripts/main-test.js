@@ -81,11 +81,13 @@ async function printBeer(id) {
 /*------------------------------------------------             ----------------------------------------- */
 
 var searchInput = document.querySelector(".search-text"); //FRÅN SÖK TEXTRUTAN
+let pageCounter = 1
 var list = "";
 
 
-let fetchBySearch = async function (userInput) { 
-    let beer = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=10"; // + "&per_page=10";
+let fetchBySearch = async function (userInput, pageCounter) { 
+    let beer = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&per_page=10" + "&page=" + pageCounter// + "&per_page=10"; https://api.punkapi.com/v2/beers?page=2&per_page=80 
+    //let beer = "https://api.punkapi.com/v2/beers?beer_name=" + userInput  + "&page=" + pageCounter + "&per_page=10" 
 
     console.log("Is root below viewable?")
     console.log(beer)
@@ -96,10 +98,20 @@ let fetchBySearch = async function (userInput) {
     return result;
 }
 
+//----------------------------------------------//
+//----------- WORKING WITH PAGINATION ----------//
+//----------------------------------------------//
 
-let createList = async function (userInput) {
+//1. global variables for pagination
+let pageLimit = false;
+let pageResultLength = 0
+const pageContainer = document.querySelector(".pagination-div")
+//let pageCounter = 1
+
+
+let createList = async function (userInput, pageCounter) {
     //let id;
-    let fetchResult = await fetchBySearch(userInput);
+    let fetchResult = await fetchBySearch(userInput, pageCounter);
 
     let searchMain = document.querySelector(".form-container");
     let ul = document.createElement("ul");
@@ -109,6 +121,26 @@ let createList = async function (userInput) {
 
     if(userInput.length > 0) {
         //ul.innerHTML = ""
+
+        //added for pagination
+        document.querySelector(".pagination-div").innerHTML = pageCounter
+        console.log("Does this work? " + pageCounter)
+
+        fetchResult = await fetchBySearch(userInput, pageCounter);
+        pageResultLength = fetchResult.length
+        console.log(fetchResult.length) //outputs 20 - check out with line 88
+        if(fetchResult.length == 0) {
+            pageLimit = true;
+        }
+        else    {
+            pageLimit = false;
+
+            //håll koll på raden nedanför
+            pageCounter = 1;
+        }
+        //end of pagination code
+
+
         for (let i = 0; i < fetchResult.length; i++) {
             let li = document.createElement("li");
             ul.appendChild(li)
@@ -132,6 +164,20 @@ let createList = async function (userInput) {
 
     }
 
+    //pagination code
+    else {
+        fetchResult = await fetchBySearch(userInput, pageCounter);
+        pageResultLength = fetchResult.length
+        console.log("Does this output?" + fetchResult.length) //outputs 1
+        if(fetchResult.length == 0) {
+            pageLimit = true;
+        }
+        else{
+            pageLimit = false;
+        }
+    }
+    //end of pagination code
+
 }
 
     /*TESTAR TÖMMA RESULTAT LISTAN IFALL SÖKFÄLTET ÄR TOMT
@@ -148,9 +194,10 @@ console.log(list)
 
 //removes
 
+//V1
 let hideList = function() {
     if(searchInput.value.length == 0) {       
-        ul.innerHTML = ""
+        //ul.innerHTML = ""
         for(let i = 0; i < list.length; i++) {
             list[i].remove();
         }
@@ -158,9 +205,67 @@ let hideList = function() {
 }
 
 
+//V2
+/*
+let hideList = function() {
+    if(searchInput.value.length == 0){
+        for()
+    }
+}
+*/
+
+
 searchInput.addEventListener("keyup", function () {
-    createList(searchInput.value);
+    createList(searchInput.value, pageCounter);
     hideList();
 })
 
 
+//-----------------------------------------------------------------------------------------------------------//
+//-------------------------------------------PREVIOUS OCH NEXT BUTTONS---------------------------------------//
+//-----------------------------------------------------------------------------------------------------------//
+
+
+
+
+const nextButton = document.getElementById("next");
+
+nextButton.addEventListener("click", function() {
+    if(pageLimit == false && pageResultLength == 10) { 
+        console.log(pageResultLength)
+        pageCounter++
+        createList(searchInput.value, pageCounter)
+        document.querySelector(".current-page").innerHTML = pageCounter;
+        for(let i = 0; i < list.length; i++) {
+            list[i].remove();
+        }
+    }
+
+    if (pageResultLength != 10) {
+        pageCounter = pageCounter
+    }
+
+    else {
+        for(let i = 0; i < list.length; i++) {
+            list[i].remove();
+        }
+    }
+   
+})
+
+
+const previousButton = document.getElementById("previous");
+
+previousButton.addEventListener("click", function() {
+    
+    if(pageCounter != 1) {
+        for(let i = 0; i < list.length; i++) {
+            list[i].remove();
+        }
+        hideList()
+        pageCounter--
+        createList(searchInput.value, pageCounter);
+        document.querySelector(".current-page").innerHTML = pageCounter
+    }
+  
+})
