@@ -108,7 +108,7 @@ let createList = async function (userInput) {
 
 
     if(userInput.length > 0) {
-        ul.innerHTML = ""
+        //ul.innerHTML = ""
         for (let i = 0; i < fetchResult.length; i++) {
             let li = document.createElement("li");
             ul.appendChild(li)
@@ -134,17 +134,29 @@ let createList = async function (userInput) {
 
 }
 
-console.log(list)
+    /*TESTAR TÖMMA RESULTAT LISTAN IFALL SÖKFÄLTET ÄR TOMT
+    if(userInput.length = 0){
+        while (searchMain.hasChildNodes()) {  
+            searchMain.removeChild(searchMain.firstChild);
+          } 
+    }
 
+}
+
+console.log(list)
+*/
 
 //removes
+
 let hideList = function() {
     if(searchInput.value.length == 0) {       
+        ul.innerHTML = ""
         for(let i = 0; i < list.length; i++) {
             list[i].remove();
         }
     }
 }
+
 
 searchInput.addEventListener("keyup", function () {
     createList(searchInput.value);
