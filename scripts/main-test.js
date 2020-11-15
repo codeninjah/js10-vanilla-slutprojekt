@@ -110,7 +110,7 @@ const pageContainer = document.querySelector(".pagination-div")
 
 
 let createList = async function (userInput, pageCounter) {
-    //let id;
+    let id = 0;
     let fetchResult = await fetchBySearch(userInput, pageCounter);
 
     let searchMain = document.querySelector(".form-container");
@@ -134,6 +134,7 @@ let createList = async function (userInput, pageCounter) {
         pageResultLength = fetchResult.length
         console.log("pageresultlength vad blir det " + pageResultLength)
         console.log(fetchResult.length) //outputs 20 - check out with line 88
+
         if(fetchResult.length == 0) {
             pageLimit = true;
         }
@@ -152,11 +153,12 @@ let createList = async function (userInput, pageCounter) {
             ul.appendChild(li)
 
             list = document.querySelectorAll(".ul-form li")
-            list[i].classList.add("li-form")
+            list[i].classList.add("li-form") 
 
              //FÖR ATT FÅ FRAM ID FÖR ÖLEN
             //id = fetchResult[i].id
 
+            //LÄGGA TILL BAKIFRÅN ISTÄLLET? DVS FÖRSTA VÄRDET BLIR SISTA
             list[i].innerHTML = fetchResult[i].name;   
     
             //list.push(li)
@@ -243,8 +245,9 @@ let hideList = function() {
 
 
 searchInput.addEventListener("keyup", function () {
-    //hideList();
+    hideList();
     createList(searchInput.value, pageCounter);
+    hideList();
 })
 
 
