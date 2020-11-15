@@ -28,7 +28,7 @@ binfo.innerHTML += "<p> Hops: " + (result[0].ingredients.hops[0].name) + "</p>"
 binfo.innerHTML += "<p>Food Pairing: " + result[0].food_pairing[0] + "</p>"
 binfo.innerHTML += "<p>Brewer tips: " + result[0].brewers_tips + "</p>"
 
-binfo.classList.add("hidden")
+binfo.classList.add("hide")
 }
 
 
@@ -51,5 +51,5 @@ const bInfo = document.querySelector(".info")
 const bInfoText = document.querySelector("#beer-info")
 
 bInfo.addEventListener("click", function(){
-    bInfoText.classList.remove("hidden")
+    bInfoText.classList.remove("hide")
 });

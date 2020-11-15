@@ -123,7 +123,7 @@ let createList = async function (userInput, pageCounter) {
     ul.classList.add("ul-form");
 
 
-    if(userInput.length > 0) {
+    if(userInput.length > 0) { //lagt till .value
         //ul.innerHTML = ""
 
         //added for pagination
@@ -243,7 +243,7 @@ let hideList = function() {
 
 
 searchInput.addEventListener("keyup", function () {
-    hideList();
+    //hideList();
     createList(searchInput.value, pageCounter);
 })
 
