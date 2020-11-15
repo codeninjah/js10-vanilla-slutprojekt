@@ -12,7 +12,7 @@ body {
   /*
   background-image: url(assets/3.jpg);
   */
-  background-image: url("/assets/3.jpg");
+  background-image: url("https://raw.githubusercontent.com/codeninjah/js10-vanilla-slutprojekt/main/assets/3.jpg") !important;
 }
 
 header {
