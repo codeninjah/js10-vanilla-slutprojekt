@@ -120,7 +120,7 @@ a {
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  width: 1020px;
+  
 }
 
 
@@ -164,6 +164,8 @@ main {
 #beer-info {
   font-size: x-large;
   font-family: lobster;
+  padding: 5px;
+  margin: 10px;
 }
 
 
