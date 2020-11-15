@@ -123,10 +123,11 @@ let createList = async function (userInput, pageCounter) {
     ul.classList.add("ul-form");
 
 
-    if(userInput.length > 0) { //lagt till .value
+    if(userInput.length > 0) { 
         //ul.innerHTML = ""
-
         //added for pagination
+        document.querySelector(".pagination-div").classList.remove("search-hidden")
+
         document.querySelector(".current-page").innerHTML = pageCounter
         console.log("Does this work? " + pageCounter)
 
@@ -180,8 +181,10 @@ let createList = async function (userInput, pageCounter) {
 
     }
 
+
     //pagination code
     else {
+        document.querySelector(".pagination-div").classList.add("search-hidden")
         fetchResult = await fetchBySearch(userInput, pageCounter);
         pageResultLength = fetchResult.length
         console.log("Does this output?" + fetchResult.length) //outputs 1
