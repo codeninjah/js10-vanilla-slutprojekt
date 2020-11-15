@@ -243,8 +243,8 @@ let hideList = function() {
 
 
 searchInput.addEventListener("keyup", function () {
-    createList(searchInput.value, pageCounter);
     hideList();
+    createList(searchInput.value, pageCounter);
 })
 
 
@@ -261,6 +261,7 @@ nextButton.addEventListener("click", function() {
     if(pageResultLength == 10) { 
         alert("Tja!")
         console.log("page resultlength blir: " + pageResultLength)
+        hideList() //
         pageCounter++
         createList(searchInput.value, pageCounter)
         document.querySelector(".current-page").innerHTML = pageCounter;
