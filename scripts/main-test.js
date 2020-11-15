@@ -127,6 +127,7 @@ let createList = async function (userInput, pageCounter) {
         //ul.innerHTML = ""
         //added for pagination
         document.querySelector(".pagination-div").classList.remove("search-hidden")
+        document.querySelector(".pagination-buttons").classList.remove("search-hidden")
 
         document.querySelector(".current-page").innerHTML = pageCounter
         console.log("Does this work? " + pageCounter)
@@ -184,7 +185,11 @@ let createList = async function (userInput, pageCounter) {
 
     //pagination code
     else {
+        //document.querySelector(".pagination-div").classList.add("search-hidden")
+
         document.querySelector(".pagination-div").classList.add("search-hidden")
+        document.querySelector(".pagination-buttons").classList.add("search-hidden")
+
         fetchResult = await fetchBySearch(userInput, pageCounter);
         pageResultLength = fetchResult.length
         console.log("Does this output?" + fetchResult.length) //outputs 1
@@ -224,6 +229,12 @@ let hideList = function() {
         for(let i = 0; i < list.length; i++) {
             list[i].remove();
         }
+
+        /*
+        document.querySelector(".pagination-div").classList.add("search-hidden")
+        document.querySelector(".pagination-buttons").classList.add("search-hidden")
+        */
+
     }
     
    /*
@@ -330,7 +341,8 @@ searchBtn.addEventListener("click", function() {
     //hides the search input and the buttons
     document.querySelector(".form-div").classList.remove("search-hidden")
     hide_List()
-    document.querySelector(".search-text").value = ""
+    
+    /*
     document.querySelector(".pagination-buttons").classList.remove("search-hidden")
 
     document.querySelector("#beer-info").classList.add("search-hidden")
@@ -338,6 +350,9 @@ searchBtn.addEventListener("click", function() {
     document.querySelector(".beer-pic").innerHTML = "<img src='" + "assets/beerorig.jpg" + "'>"
 
     document.querySelector(".beer-name").classList.add("search-hidden")
+
+    document.querySelector(".search-text").value = ""
+    */
 
 })
 
