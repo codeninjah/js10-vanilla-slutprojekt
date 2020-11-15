@@ -201,12 +201,6 @@ ul {
 }
 
 
-.search-hidden {
-  display: none;
-}
-
-
-
 .li-form{
   width: 500px;
   height: 40px;
@@ -226,7 +220,7 @@ ul {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  
+
   display: flex;
 }
 
@@ -250,4 +244,8 @@ ul {
 .pagination-buttons p{
   width: 40px;
  
+}
+
+.search-hidden {
+  display: none;
 }
