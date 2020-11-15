@@ -123,10 +123,10 @@ a {
 */
 
 element.style {
-  background-color: #722020;
-  border-radius: 10px;
-  width: 108;
-  padding: 6;
+  padding: 0;
+  display: flex;
+  background-image: beige;
+  flex-direction: column;
 }
 
 main {
@@ -165,14 +165,26 @@ main {
 /* CSS KOD FÖR SEARCH-SIDAN */
 input[type=text] {
   width: 250px;
+  font-family: "lobster";
 }
+
+.search-text{
+  border-radius: 3%;
+  border-style: none;
+  box-shadow: 0px 3px 8px #390707a6;
+  width: 250px;
+  height: 30px;
+}
+
 
 ul {
   list-style-type:none;
 }
 
 .ul-form {
-  background-color: red;
+  font-size: larger;
+    font-family: 'Lobster';
+  padding: 0%;
 }
 
 .li-form {
@@ -188,21 +200,47 @@ ul {
   cursor:pointer;
 }
 
-/*
+
 .search-hidden {
   display: none;
 }
-*/
+
+
+.li-form{
+  width: 500px;
+  height: 40px;
+  background: transparent;
+  color: #000000;
+  border-radius: 1%;
+  
+}
+
+.form-container{
+  box-shadow: 0px 5px 5px 1px #5e01015c;
+  border-radius: 5%;
+}
 
 .form-div {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  
+  display: flex;
 }
 
 /*FOR PAGINATION USE PURPOSES */
+
+.pagination-div{
+  box-shadow: 0px -1px 5px 0px #00000014;
+}
+
 .pagination-buttons{
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.803);
+  text-align-last: center;
+  font-family: 'Lobster';
+  background-color: transparent;
   padding: 6px 0;
   border-bottom-right-radius: 7px;
   border-bottom-left-radius: 7px;

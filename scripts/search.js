@@ -44,7 +44,7 @@ let createList = async function (userInput) {
      for (let i = 0; i < list.length; i++) {
          list[i].addEventListener("click", function () {
              print(fetchBySearch(list[i].innerHTML)); 
-             seeMore(); 
+              
         })
      }
 }
