@@ -139,6 +139,10 @@ let createList = async function (userInput, pageCounter) {
 
         if(fetchResult.length == 0) {
             pageLimit = true;
+
+            document.querySelector(".pagination-div").classList.add("search-hidden")
+            document.querySelector(".pagination-buttons").classList.add("search-hidden")
+
         }
         else    {
             pageLimit = false;
@@ -195,6 +199,9 @@ let createList = async function (userInput, pageCounter) {
         console.log("Does this output?" + fetchResult.length) //outputs 1
         if(fetchResult.length == 0) { //ändrat
             pageLimit = true;
+
+            document.querySelector(".pagination-div").classList.add("search-hidden")
+            document.querySelector(".pagination-buttons").classList.add("search-hidden")
         }
         else{
             pageLimit = false;
@@ -230,10 +237,10 @@ let hideList = function() {
             list[i].remove();
         }
 
-        /*
+        
         document.querySelector(".pagination-div").classList.add("search-hidden")
         document.querySelector(".pagination-buttons").classList.add("search-hidden")
-        */
+        
 
     }
     
