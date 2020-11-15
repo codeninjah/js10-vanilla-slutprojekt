@@ -181,7 +181,7 @@ let createList = async function (userInput, pageCounter) {
         fetchResult = await fetchBySearch(userInput, pageCounter);
         pageResultLength = fetchResult.length
         console.log("Does this output?" + fetchResult.length) //outputs 1
-        if(fetchResult.length < 11) { //ändrat
+        if(fetchResult.length == 0) { //ändrat
             pageLimit = true;
         }
         else{
@@ -229,6 +229,12 @@ let hideList = function() {
     */
 }
 
+//Needed becuase hideList() only applies when the search field is empty
+let hide_List = function() {
+    for(let i = 0; i < list.length; i++) {
+        list[i].remove();
+    }
+}
 
 
 //V2
@@ -245,9 +251,9 @@ let hideList = function() {
 
 
 searchInput.addEventListener("keyup", function () {
-    hideList();
+    //hideList();
     createList(searchInput.value, pageCounter);
-    hideList();
+    hide_List();
 })
 
 
@@ -261,18 +267,20 @@ searchInput.addEventListener("keyup", function () {
 const nextButton = document.getElementById("next");
 
 nextButton.addEventListener("click", function() {
-    if(pageResultLength == 10) { 
-        this.innerHTML=""
+    if(pageLimit == false && pageResultLength == 10) { 
+        //this.innerHTML=""
         console.log("page resultlength blir: " + pageResultLength)
-        hideList() //
+        //hideList() //
         pageCounter++
         createList(searchInput.value, pageCounter)
         document.querySelector(".current-page").innerHTML = pageCounter;
+
+        
         for(let i = 0; i < list.length; i++) {
             list[i].remove();
-        }
-    }
-
+            }
+         }
+        
     if (pageResultLength != 10) {
         pageCounter = pageCounter
     }
@@ -282,6 +290,7 @@ nextButton.addEventListener("click", function() {
             list[i].remove();
         }
     }
+    
    
 })
 
