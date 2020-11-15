@@ -164,6 +164,8 @@ main {
 #beer-info {
   font-size: x-large;
   font-family: lobster;
+  padding: 5px;
+  margin: 10px;
 }
 
 
