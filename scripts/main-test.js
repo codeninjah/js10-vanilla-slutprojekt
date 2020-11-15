@@ -115,7 +115,11 @@ let createList = async function (userInput, pageCounter) {
 
     let searchMain = document.querySelector(".form-container");
     let ul = document.createElement("ul");
+
+    //ul.innerHTML = ""
+
     searchMain.appendChild(ul);
+
     ul.classList.add("ul-form");
 
 
@@ -123,11 +127,12 @@ let createList = async function (userInput, pageCounter) {
         //ul.innerHTML = ""
 
         //added for pagination
-        document.querySelector(".pagination-div").innerHTML = pageCounter
+        document.querySelector(".current-page").innerHTML = pageCounter
         console.log("Does this work? " + pageCounter)
 
         fetchResult = await fetchBySearch(userInput, pageCounter);
         pageResultLength = fetchResult.length
+        console.log("pageresultlength vad blir det " + pageResultLength)
         console.log(fetchResult.length) //outputs 20 - check out with line 88
         if(fetchResult.length == 0) {
             pageLimit = true;
@@ -139,17 +144,22 @@ let createList = async function (userInput, pageCounter) {
             pageCounter = 1;
         }
         //end of pagination code
-
-
         for (let i = 0; i < fetchResult.length; i++) {
+            //let li = document.createElement("li");
+
             let li = document.createElement("li");
+            //li.innerHTML = ""
             ul.appendChild(li)
-            
-            li.classList.add("li-form");
+
+            list = document.querySelectorAll(".ul-form li")
+            list[i].classList.add("li-form")
+
+            list[i].innerHTML = fetchResult[i].name;   
     
-            li.innerHTML = fetchResult[i].name;   
-            //console.log("Namn för id är : " + fetchResult[i].name) 
             
+
+            //list.push(li)
+
             //FÖR ATT FÅ FRAM ID FÖR ÖLEN
             //id = fetchResult[i].id
 
@@ -198,20 +208,29 @@ console.log(list)
 //removes
 
 //V1
-/*
+
 let hideList = function() {
-    if(searchInput.value.length == 0) {       
-        //ul.innerHTML = ""
+    
+    if(searchInput.length == 0) {       
         for(let i = 0; i < list.length; i++) {
             list[i].remove();
         }
     }
+    
+   /*
+    var aaa = document.querySelectorAll(".ul-form");    
+    for(var a of aaa){
+        //alert("TEST!!!")
+        a.remove()
+        a.innerHTML = ""
+    }
+    */
 }
-*/
+
 
 
 //V2
-
+/*
 let hideList = function() {
     if(searchInput.value.length == 0){
         for(var let of list){
@@ -219,6 +238,7 @@ let hideList = function() {
         }
     }
 }
+*/
 
 
 
@@ -238,8 +258,9 @@ searchInput.addEventListener("keyup", function () {
 const nextButton = document.getElementById("next");
 
 nextButton.addEventListener("click", function() {
-    if(pageLimit == false && pageResultLength == 10) { 
-        console.log(pageResultLength)
+    if(pageResultLength == 10) { 
+        alert("Tja!")
+        console.log("page resultlength blir: " + pageResultLength)
         pageCounter++
         createList(searchInput.value, pageCounter)
         document.querySelector(".current-page").innerHTML = pageCounter;

@@ -116,9 +116,11 @@ a {
   width: 1020px;
 }
 
+/*
 .hidden {
   display: none;
 }
+*/
 
 element.style {
   background-color: #722020;
@@ -186,9 +188,11 @@ ul {
   cursor:pointer;
 }
 
+/*
 .search-hidden {
   display: none;
 }
+*/
 
 .form-div {
   text-align: center;
