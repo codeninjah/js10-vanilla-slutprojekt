@@ -154,19 +154,19 @@ let createList = async function (userInput, pageCounter) {
             list = document.querySelectorAll(".ul-form li")
             list[i].classList.add("li-form")
 
+             //FÖR ATT FÅ FRAM ID FÖR ÖLEN
+            //id = fetchResult[i].id
+
             list[i].innerHTML = fetchResult[i].name;   
     
-            
-
             //list.push(li)
-
-            //FÖR ATT FÅ FRAM ID FÖR ÖLEN
-            //id = fetchResult[i].id
+          
 
             console.log("Och id är : " + fetchResult[i].id) //id is right
         
             li.addEventListener("click", function(){
                 printBeer(fetchResult[i].id)
+                console.log("You clicked on " + fetchResult[i].name)
             })
 
  
@@ -179,7 +179,7 @@ let createList = async function (userInput, pageCounter) {
         fetchResult = await fetchBySearch(userInput, pageCounter);
         pageResultLength = fetchResult.length
         console.log("Does this output?" + fetchResult.length) //outputs 1
-        if(fetchResult.length == 0) {
+        if(fetchResult.length < 11) { //ändrat
             pageLimit = true;
         }
         else{
@@ -211,7 +211,7 @@ console.log(list)
 
 let hideList = function() {
     
-    if(searchInput.length == 0) {       
+    if(searchInput.value.length == 0) {       
         for(let i = 0; i < list.length; i++) {
             list[i].remove();
         }
