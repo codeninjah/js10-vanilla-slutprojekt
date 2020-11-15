@@ -1,6 +1,6 @@
 body,
 html {
-  background: url(/assets/3.jpg);
+  background: url("/assets/3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
