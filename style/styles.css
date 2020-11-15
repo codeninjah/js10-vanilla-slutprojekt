@@ -1,11 +1,15 @@
 body,
 html {
-  background: url("/assets/3.jpg");
+  background-image: url("/assets/3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: auto;
   margin: 0%;
+}
+
+body {
+  background-image: url(assets/3.jpg);
 }
 
 header {
