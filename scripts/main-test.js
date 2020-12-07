@@ -18,7 +18,7 @@ async function getBeer(beerNr) {
 
 //--------------------PRINT FUNCTIONEN -------------//
 async function print() {
-let randomNr = Math.floor(Math.random() * 1000);     // returns a random integer from 0 to 999
+let randomNr = Math.floor(Math.random() * 100);     
 
 let result = await getBeer(randomNr) // Anropar getBeer functionen och skickar med ett randomNr som parameter
 
@@ -56,6 +56,9 @@ async function printBeer(id) {
     console.log("Do I get this right? " + id) //output does not contain id
     console.log("Resultat är: " + result) //output is [OBJECT OBJECT] 25 times
     
+
+    //JOBBA LITE MED BILDLÄNK, VERKAR BLI ETT FEL NÄR MAN SKA KÖRA RANDOM KNAPPEN
+
     document.querySelector(".beer-pic").innerHTML = "<img src='" + result[0].image_url + "'/>"
     document.querySelector(".beer-name").innerText = result[0].name
 
@@ -75,6 +78,11 @@ async function printBeer(id) {
     binfo.classList.add("hidden")
     }
 
+    //random knappen
+    const randomiseBtn = document.querySelector(".random-beer-btn")
+    randomiseBtn.addEventListener("click", function(){
+        print();
+    });
 
 /*------------------------------------------------             ------------------------------------------*/
 /* ----------------------------------------------- SEARCH PAGE ----------------------------------------- */
@@ -362,4 +370,13 @@ searchBtn.addEventListener("click", function() {
     */
 
 })
+
+//------------------ EXEMPEL PÅ HUR DESCRIPTION SKULLE KUNNA FUNKA ----------//
+
+const bInfo = document.querySelector(".info")
+const bInfoText = document.querySelector("#beer-info")
+
+bInfo.addEventListener("click", function(){
+    bInfoText.classList.remove("hide")
+});
 
