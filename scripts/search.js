@@ -26,7 +26,7 @@ let createList = async function (userInput) {
     ul.classList.add("ul-form");
 
 
-    if(userInput.length > 0) {
+    if(searchInput.value.length == 3) {
         document.querySelector(".form2-container").classList.remove("search-hidden")
         for (let i = 0; i < fetchResult.length; i++) {
             let li = document.createElement("li");
@@ -37,6 +37,7 @@ let createList = async function (userInput) {
     
             list[i].innerHTML = fetchResult[i].name;           
         }
+        
     }
 
       

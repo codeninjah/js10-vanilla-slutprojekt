@@ -123,7 +123,7 @@ let createList = async function (userInput, pageCounter) {
     ul.classList.add("ul-form");
 
 
-    if(userInput.length > 0) { 
+    if(userInput.length >= 3) { 
         //ul.innerHTML = ""
         //added for pagination
         document.querySelector(".pagination-div").classList.remove("search-hidden")
