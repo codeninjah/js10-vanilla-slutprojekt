@@ -75,14 +75,8 @@ async function printBeer(id) {
     //binfo.innerHTML += //Food pairing
     binfo.innerHTML += "<p>Brewer tips: " + result[0].brewers_tips + "</p>"
     
-    binfo.classList.add("hidden")
+    binfo.classList.add("hide") //changed from hidden to hide
     }
-
-    //random knappen
-    const randomiseBtn = document.querySelector(".random-beer-btn")
-    randomiseBtn.addEventListener("click", function(){
-        print();
-    });
 
 /*------------------------------------------------             ------------------------------------------*/
 /* ----------------------------------------------- SEARCH PAGE ----------------------------------------- */
@@ -287,7 +281,7 @@ searchInput.addEventListener("keyup", function () {
     //hideList();
     createList(searchInput.value, pageCounter);
     hide_List();
-})
+});
 
 
 //-----------------------------------------------------------------------------------------------------------//
@@ -372,6 +366,13 @@ searchBtn.addEventListener("click", function() {
 })
 
 //------------------ EXEMPEL PÅ HUR DESCRIPTION SKULLE KUNNA FUNKA ----------//
+
+//random knappen
+const randomiseBtn = document.querySelector(".random-beer-btn")
+
+randomiseBtn.addEventListener("click", function(){
+    print()
+});
 
 const bInfo = document.querySelector(".info")
 const bInfoText = document.querySelector("#beer-info")
