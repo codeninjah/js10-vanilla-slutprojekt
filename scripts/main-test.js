@@ -276,10 +276,10 @@ let hideList = function() {
 */
 
 
-
-searchInput.addEventListener("keyup", function () {
+//får error, testar med att byta searchInput till userInput
+userInput.addEventListener("keyup", function () {
     //hideList();
-    createList(searchInput.value, pageCounter);
+    createList(userInput.value, pageCounter);
     hide_List();
 });
 
