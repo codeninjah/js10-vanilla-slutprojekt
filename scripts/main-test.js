@@ -65,7 +65,7 @@ async function printBeer(id) {
     //another test
     console.log("DO I GET THE NAME OF THE BEER? " + result[0].name)
     
-    const binfo = document.querySelector("#beer-info")
+    //const binfo = document.querySelector("#beer-info")
     
     binfo.innerHTML = "<p>" + result[0].description + "</p>"
     binfo.innerHTML += "<p>Alcohol by volume: " + result[0].abv + "</p>"
@@ -75,7 +75,7 @@ async function printBeer(id) {
     //binfo.innerHTML += //Food pairing
     binfo.innerHTML += "<p>Brewer tips: " + result[0].brewers_tips + "</p>"
     
-    binfo.classList.add("hide") //changed from hidden to hide
+    //binfo.classList.add("hide") //changed from hidden to hide
     }
 
 /* -------------------------------------------------------------------------------------------------------*/
@@ -183,6 +183,8 @@ let createList = async function (userInput, pageCounter) {
                 //hides the search input and the buttons
                 document.querySelector(".form-div").classList.add("search-hidden")
                 document.querySelector(".pagination-buttons").classList.add("search-hidden")
+
+                document.querySelector(".beer-info").classList.remove("hide")
             })
 
  
@@ -248,14 +250,6 @@ let hideList = function() {
 
     }
     
-   /*
-    var aaa = document.querySelectorAll(".ul-form");    
-    for(var a of aaa){
-        //alert("TEST!!!")
-        a.remove()
-        a.innerHTML = ""
-    }
-    */
 }
 
 //Needed becuase hideList() only applies when the search field is empty
@@ -380,9 +374,12 @@ bInfo.addEventListener("click", function(){
 });
 */
 
-var bname = document.querySelector(".beer-name").innerText
+/*
+var bname = document.querySelector(".beer-name")
 
-if(bname.length > 0) {
+if(bname.innerText.length > 0) {
     document.querySelector("#beer-info").classList.remove("hide")
 }
+*/
+
 
