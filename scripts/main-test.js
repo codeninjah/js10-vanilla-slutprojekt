@@ -18,9 +18,12 @@ async function getBeer(beerNr) {
 
 //--------------------PRINT FUNCTIONEN -------------//
 async function print() {
-let randomNr = Math.floor(Math.random() * 100);     
+//let randomNr = Math.floor(Math.random() * 100);     
 
-let result = await getBeer(randomNr) // Anropar getBeer functionen och skickar med ett randomNr som parameter
+//let result = await getBeer(randomNr) // Anropar getBeer functionen och skickar med ett randomNr som parameter
+
+const req = await fetch ("https://api.punkapi.com/v2/beers/random ")
+const result = await req.json()
 
 console.log(result) //JUST TO TEST
 
@@ -259,15 +262,15 @@ let hide_List = function() {
     }
 }
 
-//
-//BORTKOMMENTERAT FÖLJANDE FUNKTION
-//
 
+
+if(searchInput){
 searchInput.addEventListener("keyup", function () {
     //hideList();
     createList(searchInput.value, pageCounter);
     hide_List();
 });
+}
 
 
 
@@ -279,6 +282,7 @@ searchInput.addEventListener("keyup", function () {
 
 const nextButton = document.getElementById("next");
 
+if(nextButton){
 nextButton.addEventListener("click", function() {
     if(pageLimit == false && pageResultLength == 10) { 
         //this.innerHTML=""
@@ -306,10 +310,12 @@ nextButton.addEventListener("click", function() {
     
    
 })
+}
 
 
 const previousButton = document.getElementById("previous");
 
+if(previousButton){
 previousButton.addEventListener("click", function() {
     
     if(pageCounter != 1) {
@@ -324,6 +330,7 @@ previousButton.addEventListener("click", function() {
     }
   
 })
+}
 
 // -----------------------------------------------------------------------------------//
 //------------------- MAKES THE SEARCH BUTTON CLICKABLE AGAIN ------------------------//
@@ -332,6 +339,7 @@ previousButton.addEventListener("click", function() {
 
 let searchBtn = document.querySelector("#search-btn")
 
+if(searchBtn){
 searchBtn.addEventListener("click", function() {
     //hides the search input and the buttons
     document.querySelector(".form-div").classList.remove("search-hidden")
@@ -352,6 +360,7 @@ searchBtn.addEventListener("click", function() {
     */
 
 })
+}
 
 //------------------ EXEMPEL PÅ HUR DESCRIPTION SKULLE KUNNA FUNKA ----------//
 
@@ -404,3 +413,5 @@ bInfo.addEventListener("click", function(){
 });
 
 
+// FOR RANDOM
+// https://api.punkapi.com/v2/beers/random 
