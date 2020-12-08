@@ -21,7 +21,14 @@ async function printRnd() {
 const req = await fetch ("https://api.punkapi.com/v2/beers/random ")
 const result = await req.json()
 
+if(result[0].image_url != null){
 document.querySelector(".beer-pic").innerHTML = "<img src='" + result[0].image_url + "'/>"
+}
+else
+{
+    document.querySelector(".beer-pic").innerHTML = "<img src='" + "assets/no-image.png'" +"/>"
+}
+
 document.querySelector(".beer-name").innerText = result[0].name
 
 const binfo = document.querySelector("#beer-info")
@@ -42,7 +49,14 @@ binfo.classList.add("hidden")
 async function printBeer(id) {    
     let result = await getBeer(id) 
 
-    document.querySelector(".beer-pic").innerHTML = "<img src='" + result[0].image_url + "'/>"
+    if(result[0].image_url != null){
+        document.querySelector(".beer-pic").innerHTML = "<img src='" + result[0].image_url + "'/>"
+        }
+        else
+        {
+            document.querySelector(".beer-pic").innerHTML = "<img src='" + "assets/no-image.png'" +"/>"
+        }
+
     document.querySelector(".beer-name").innerText = result[0].name
     
     const binfo = document.querySelector(".beer-info")
