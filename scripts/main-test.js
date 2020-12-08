@@ -265,22 +265,9 @@ let hide_List = function() {
     }
 }
 
-
-//V2
-/*
-let hideList = function() {
-    if(searchInput.value.length == 0){
-        for(var let of list){
-            let.remove()
-        }
-    }
-}
-*/
-
 //
 //BORTKOMMENTERAT FÖLJANDE FUNKTION
 //
-//får error, testar med att byta searchInput till userInput
 
 searchInput.addEventListener("keyup", function () {
     //hideList();
@@ -356,10 +343,12 @@ searchBtn.addEventListener("click", function() {
     document.querySelector(".form-div").classList.remove("search-hidden")
     hide_List()
     
+    
+
+    //document.querySelector("#beer-info").classList.remove("hide")
+
     /*
     document.querySelector(".pagination-buttons").classList.remove("search-hidden")
-
-    document.querySelector("#beer-info").classList.add("search-hidden")
 
     document.querySelector(".beer-pic").innerHTML = "<img src='" + "assets/beerorig.jpg" + "'>"
 
@@ -390,4 +379,10 @@ bInfo.addEventListener("click", function(){
     bInfoText.classList.remove("hide")
 });
 */
+
+var bname = document.querySelector(".beer-name").innerText
+
+if(bname.length > 0) {
+    document.querySelector("#beer-info").classList.remove("hide")
+}
 
