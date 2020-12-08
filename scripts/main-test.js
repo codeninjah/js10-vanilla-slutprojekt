@@ -84,7 +84,7 @@ async function printBeer(id) {
 /* ------------------------------------------------             ----------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------ */
 
-var userInput = document.querySelector(".search-text"); //FRÅN SÖK TEXTRUTAN
+var searchInput = document.querySelector(".search-text"); //FRÅN SÖK TEXTRUTAN
 let pageCounter = 1
 var list = "";
 
@@ -281,19 +281,18 @@ let hideList = function() {
 //BORTKOMMENTERAT FÖLJANDE FUNKTION
 //
 //får error, testar med att byta searchInput till userInput
-/*
+
 searchInput.addEventListener("keyup", function () {
     //hideList();
     createList(searchInput.value, pageCounter);
     hide_List();
 });
-*/
+
 
 
 //-----------------------------------------------------------------------------------------------------------//
 //-------------------------------------------PREVIOUS OCH NEXT BUTTONS---------------------------------------//
 //-----------------------------------------------------------------------------------------------------------//
-
 
 
 
