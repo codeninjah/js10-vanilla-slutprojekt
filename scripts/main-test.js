@@ -400,6 +400,7 @@ if(bname.innerText.length > 0) {
 const randomiseBtn = document.querySelector(".random-beer-btn")
 randomiseBtn.addEventListener("click", function(){
     print()
+    bInfoText.classList.add("hide")
 });
 
 
