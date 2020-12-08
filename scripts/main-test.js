@@ -78,11 +78,13 @@ async function printBeer(id) {
     binfo.classList.add("hide") //changed from hidden to hide
     }
 
-/*------------------------------------------------             ------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------             ------------------------------------------*/
 /* ----------------------------------------------- SEARCH PAGE ----------------------------------------- */
-/*------------------------------------------------             ----------------------------------------- */
+/* ------------------------------------------------             ----------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------ */
 
-var searchInput = document.querySelector(".search-text"); //FRÅN SÖK TEXTRUTAN
+var userInput = document.querySelector(".search-text"); //FRÅN SÖK TEXTRUTAN
 let pageCounter = 1
 var list = "";
 
@@ -275,13 +277,17 @@ let hideList = function() {
 }
 */
 
-
+//
+//BORTKOMMENTERAT FÖLJANDE FUNKTION
+//
 //får error, testar med att byta searchInput till userInput
-userInput.addEventListener("keyup", function () {
+/*
+searchInput.addEventListener("keyup", function () {
     //hideList();
-    createList(userInput.value, pageCounter);
+    createList(searchInput.value, pageCounter);
     hide_List();
 });
+*/
 
 
 //-----------------------------------------------------------------------------------------------------------//
@@ -368,11 +374,15 @@ searchBtn.addEventListener("click", function() {
 //------------------ EXEMPEL PÅ HUR DESCRIPTION SKULLE KUNNA FUNKA ----------//
 
 //random knappen
+/*
 const randomiseBtn = document.querySelector(".random-beer-btn")
 
 randomiseBtn.addEventListener("click", function(){
     print()
 });
+*/
+
+/*
 
 const bInfo = document.querySelector(".info")
 const bInfoText = document.querySelector("#beer-info")
@@ -380,4 +390,5 @@ const bInfoText = document.querySelector("#beer-info")
 bInfo.addEventListener("click", function(){
     bInfoText.classList.remove("hide")
 });
+*/
 
