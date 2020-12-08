@@ -65,7 +65,7 @@ async function printBeer(id) {
     //another test
     console.log("DO I GET THE NAME OF THE BEER? " + result[0].name)
     
-    //const binfo = document.querySelector("#beer-info")
+    const binfo = document.querySelector(".beer-info")
     
     binfo.innerHTML = "<p>" + result[0].description + "</p>"
     binfo.innerHTML += "<p>Alcohol by volume: " + result[0].abv + "</p>"
@@ -381,5 +381,26 @@ if(bname.innerText.length > 0) {
     document.querySelector("#beer-info").classList.remove("hide")
 }
 */
+
+///---------------------------------------------------------///
+///---------------------------------------------------------///
+///---------------------------------------------------------///
+
+//--------------------- DETTA ÄR TILL FÖR INDEX SIDAN -------------------//
+
+const randomiseBtn = document.querySelector(".random-beer-btn")
+randomiseBtn.addEventListener("click", function(){
+    print()
+});
+
+
+//------------------ EXEMPEL PÅ HUR DESCRIPTION SKULLE KUNNA FUNKA ----------//
+
+const bInfo = document.querySelector(".info")
+const bInfoText = document.querySelector("#beer-info")
+
+bInfo.addEventListener("click", function(){
+    bInfoText.classList.remove("hide")
+});
 
 

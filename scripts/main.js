@@ -32,12 +32,8 @@ binfo.classList.add("hide")
 }
 
 
+
 //---------------------END FUNKTIONEN PRINT -------------------//
-
-
-// VILL DU LADDA IN EN RANDOM BEER, ANVÄND BORTKOMMENTERADE FUNKTIONSANROPET NEDAN
-//print()
-
 
 const randomiseBtn = document.querySelector(".random-beer-btn")
 randomiseBtn.addEventListener("click", function(){
